@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import instruction from '../image/instruction3.png'
 import table from '../image/table.png'
 import {Link} from 'react-router-dom'
+import { isDisabled } from '@testing-library/user-event/dist/utils'
 
 const Instruction1 = () => {
     const [lang,setLang] = useState('')
+    const [checked,setChecked] = useState(true)
 
   return (
     <div className='relative w-full h-[100vh] overflow-y-scroll text-[15px]'>
@@ -47,7 +49,7 @@ const Instruction1 = () => {
             </div>
             <p className='text-red-600'>Please note all question will appear in default language. This language can be changed for a perticular question later on.</p>
             <div className=' m-3 flex items-start'>
-                <input type='checkbox'/>
+                <input onClick={()=>setChecked(!checked)} type='checkbox'/>
                 <p className=''>I have read and understood instruction . All computer hardware allocated to me in proper condition.
                 I declare that i am not in possession of / not wearing / not carrying any prohibited gadgets
                 like mobile phone, bluetooth devices etc any prohibited material with me in examination hall.
@@ -56,7 +58,7 @@ const Instruction1 = () => {
             </div>
             <div>
                 <button className='border px-4 py-2 text-[18px] border-black rounded ml-20'> Previous </button>
-                <Link to='/instruction2'><button className='border px-4 py-2 text-[14px] text-white rounded ml-56 bg-blue-600'> I am  ready to begin </button></Link>
+                <Link to='/instruction2'><button disabled={checked} className='border px-4 py-2 text-[14px] text-white rounded ml-56 bg-blue-600'> I am  ready to begin </button></Link>
             </div>
         </div>
     </div>
