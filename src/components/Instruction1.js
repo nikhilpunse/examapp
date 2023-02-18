@@ -57,8 +57,8 @@ const Instruction1 = () => {
                 debarder from this test and/or to decipline action, which may include ban for future examinations.</p>
             </div>
             <div>
-                <button className='border px-4 py-2 text-[18px] border-black rounded ml-20'> Previous </button>
-                <Link to='/instruction2'><button disabled={checked} className='border px-4 py-2 text-[14px] text-white rounded ml-56 bg-blue-600'> I am  ready to begin </button></Link>
+                <Link to={'/'}><button className='border px-4 py-2 text-[18px] border-black rounded ml-20'> Previous </button></Link>
+                <Link to='/instruction2'><button disabled={checked} className={checked? 'border px-4 py-2 text-[14px] text-white rounded ml-56 bg-blue-400' : 'border px-4 py-2 text-[14px] text-white rounded ml-56 bg-blue-600'}> I am  ready to begin </button></Link>
             </div>
         </div>
     </div>
